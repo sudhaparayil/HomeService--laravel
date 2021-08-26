@@ -159,8 +159,8 @@
                         @endif 
                             {{--  end login authentication                    --}}
                 
-                    <li class="search-bar">
-                    </li>
+                    {{-- <li class="search-bar">
+                    </li> --}}
                 </ul>
             </nav>
         </header>
