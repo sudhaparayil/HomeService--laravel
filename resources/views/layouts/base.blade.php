@@ -56,6 +56,7 @@
                     <li class="title">
                         <a href="index.php.html"><img src="{{ asset('images/logo.png')}}"></a>
                     </li>
+                    <li> <a href="{{route('home.service_categories')}}">Service Categories</a>
                     <li> <a href="javascript:void(0);">Air Conditioners</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="service-details/ac-wet-servicing.html">Wet Servicing</a></li>
