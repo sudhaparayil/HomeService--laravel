@@ -11,12 +11,12 @@
         <div class="bg_parallax image_02_parallax"></div>
         <div class="opacy_bg_02">
             <div class="container">
-                <h1>Service Categories</h1>
+                <h1>All Services </h1>
                 <div class="crumbs">
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li>/</li>
-                        <li>Service Categories</li>
+                        <li>All Services</li>
                     </ul>
                 </div>
             </div>
@@ -31,9 +31,9 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <div class="row">
-                                        <div class="col-md-6">All Service Categories</div>
+                                        <div class="col-md-6">All Services</div>
                                             <div class="col-md-6">
-                                                <a href="{{route('admin.add_service_category')}}" class="btn btn-info pull-right">Add New</a>
+                                                <a href="#" class="btn btn-info pull-right">Add New</a>
                                             </div> 
                                     </div>
                                 </div>
@@ -48,28 +48,39 @@
                                         <th>#</th>
                                         <th>Image</th>
                                         <th>Name</th>
-                                        <th>Slug</th>
+                                        <th>Price</th>
+                                        <th>Status</th>
+                                        <th>Category</th>
+                                        <th>Created At</th>
                                         <th>Action</th>
                                       </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($categories as $item)
+                                        @foreach ($services as $item)
                                     <tr>
                                         <td>{{$item->id}}</td>
-                                        <td><img src="{{asset('images/categories')}}/{{$item->image}}" width="60" alt=""></td>
+                                        <td><img src="{{asset('images/services/thumbnails')}}/{{$item->thumbnail}}" width="60" alt=""></td>
                                         <td>{{$item->name}}</td>
-                                        <td>{{$item->slug}}</td>
-
-                                        <td><a href="{{route('admin.services_by_category',['category_slug'=>$item->slug])}}" style="margin-right: 10px;" ><i class="fa fa-list fa-2x text-info"></i></a>
-                                            <a href="{{route('admin.edit_service_category',['category_id'=>$item->id])}}"><i class="fa fa-edit fa-2x text-info"></i></a>
-                                            <a href="#" onclick="confirm('Are you sure, delete this service category!') || event.stopImmediatePropagation()" wire:click.prevent="deleteServiceCategory({{$item->id}})" style="margin-left: 10px"><i class="fa fa-times fa-2x text-danger"></i></a>
+                                        <td>{{$item->price}}</td>
+                                        <td>
+                                            @if ($item->status)
+                                                Active
+                                                @else
+                                                Inactive
+                                            @endif
+                                        </td>
+                                        <td>{{$item->category->name}}</td>
+                                        <td>{{$item->created_at}}</td>
+                                        <td>
+                                            <a href="#"><i class="fa fa-edit fa-2x text-info"></i></a>
+                                            <a href="#"  style="margin-left: 10px"><i class="fa fa-times fa-2x text-danger"></i></a>
                                         </td>
                                         
                                     </tr>
                                         @endforeach
                                     </tbody>
                                   </table>
-                                  {{$categories->links()}}
+                                  {{$services->links()}}
                             </div>
                        </div>
                     </div>
