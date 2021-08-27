@@ -28,6 +28,7 @@
             <div>
                 <div class="container">
                     <div class="portfolioContainer">
+                        @if($scategory->services->count()>0)
                         @foreach ($scategory->services as $service)
                         <div class="col-xs-6 col-sm-4 col-md-3 nature hsgrids"
                         style="padding-right: 5px;padding-left: 5px;">
@@ -47,6 +48,9 @@
                         </a>
                     </div>
                         @endforeach 
+                        @else
+                        <div class="col-md-12"><p class="text-center">There is any services.</p></div>
+                        @endif
                     </div>
                 </div>
             </div>
