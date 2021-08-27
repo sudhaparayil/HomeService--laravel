@@ -4,6 +4,7 @@ use App\Http\Livewire\Customer\CustomerDashboardComponent;
 use App\Http\Livewire\Sprovider\SproviderDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\ServiceCategoriesComponent;
+use App\Http\Livewire\ServiceByCategoryComponent;
 use App\Http\Livewire\Admin\AdminServiceCategory;
 use App\Http\Livewire\Admin\AdminAddServiceCategory;
 use App\Http\Livewire\Admin\AdminEditServiceCategory;
@@ -28,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',HomeComponent::class)->name('home');
 Route::get('/service-categories',ServiceCategoriesComponent::class)->name('home.service_categories');
+Route::get('/{category_slug}/services',ServiceByCategoryComponent::class)->name('home.services_by_categories');
 
 
 //for customer

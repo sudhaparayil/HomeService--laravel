@@ -32,8 +32,8 @@
                         @foreach ($categories as $item)
                         <li>
                             <div class="item-service-line">
-                                <i class="fa"><a href="servicesbycategory/1.html"><img class="icon-img"
-                                            src="{{asset('images/categories')}}/{{$item->image}}" alt="{{$item->slug}}"></a></i>
+                                <i class="fa"><a href="{{route('home.services_by_categories',['category_slug'=>$item->slug])}}"><img class="icon-img"
+                                            src="{{asset('images/categories')}}/{{$item->image}}" alt="{{$item->name}}"></a></i>
                                 <h5>{{$item->name}}</h5>
                             </div>
                         </li>
