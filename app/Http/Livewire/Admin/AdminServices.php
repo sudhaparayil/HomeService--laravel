@@ -11,7 +11,7 @@ class AdminServices extends Component
     use withPagination;
     public function render()
     {
-        $services = Service::paginate(5);
+        $services = Service::orderBy('id','DESC')->paginate(5);
        // dd($services->category);
          // echo $services;
        // die;

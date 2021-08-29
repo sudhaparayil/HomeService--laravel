@@ -46,7 +46,7 @@ class AdminAddServiceCategory extends Component
     $category->save();
 
     session()->flash('message','Service Category add successfully');
-
+    
     }
 
 
